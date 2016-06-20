@@ -1,0 +1,41 @@
+
+/* flex display prefix mixin */
+@mixin flexDisplay {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/*font size maps for each element*/
+$topName-font-size:(
+null: 50px,
+320px: 30px,
+768px: 30px,
+1024px: 50px,
+1920px: 50px,
+);
+$topDesc-font-size:(
+null: 30px,
+320px: 15px,
+768px: 15px,
+1024px: 30px,
+1920px: 30px,
+);
+
+
+/*font size mixin to use for each element*/
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null{
+      font-size: $fs-font-size;
+    }
+    @else {
+      @media screen and(min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+
+}
