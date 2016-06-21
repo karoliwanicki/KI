@@ -37,11 +37,34 @@
   height: 100vh;
   // background-color: #009fe3;
   @include  flexDisplay;
-  justify-content: center;
+  align-items:center;
+  flex-direction: column;
   p{
-    margin-top: 15%;
-    margin-right: 15%;
-    font-size: 40px;
     font-family: oswald;
+    &:first-of-type{
+      margin-top: 15%;
+      font-size: 70px;
+      margin-right: 15%;
+    }
+     &:nth-of-type(2){
+          font-size: 40px;
+        }
+  }
+
+}
+.menus{
+  @include flexDisplay;
+  margin-top: 3%;
+  .circle_one{
+    @include flexDisplay;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+    border: 1px solid #009fe3;
+    width: 200px;
+    height: 200px;
+    background-color: #009fe3;
+    margin-right: 15px;
   }
 }
